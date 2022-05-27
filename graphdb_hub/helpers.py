@@ -1,6 +1,5 @@
 from namespaces import NAMESPACES
 
-
 def curie_to_uri(curie: str, curie_map=NAMESPACES) -> str:
     if ":" not in curie:
         return curie

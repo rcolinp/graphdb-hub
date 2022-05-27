@@ -1,3 +1,4 @@
+from pathlib import Path
 from io import BytesIO
 from zipfile import ZipFile
 from rdflib import Graph, Literal, URIRef, DC, RDF, RDFS, SKOS
@@ -6,8 +7,8 @@ from namespaces import NAMESPACES, NCIT, SH
 from helpers import curie_to_uri
 
 
-class NciThesaurusToRDF:
-    def __init__(self, url):
+class NciThesaurusToRDF(object):
+    def __init__(self, url: str):
         resp = urlopen(url)
         self.zipfile = ZipFile(BytesIO(resp.read()))
         self.graph = Graph()
@@ -18,7 +19,7 @@ class NciThesaurusToRDF:
         self.graph.namespace_manager.bind("rdf", RDF)
         self.graph.namespace_manager.bind("rdfs", RDFS)
 
-    def convert_to_rdf(self, see_also=""):
+    def convert_to_rdf(self, see_also=False) -> Graph:
         cs_uri = URIRef("http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl")
         self.graph.add((cs_uri, RDF.type, SKOS.ConceptScheme))
         self.graph.add((cs_uri, DC.description, Literal("Ontology for NCI Thesaurus")))
