@@ -22,6 +22,7 @@ rfc3986 = "^2.0.0"
 prefixcommons = "^0.1.9"
 rdflib = "^6.1.1"
 en_core_web_md = { url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_md-3.1.0/en_core_web_md-3.1.0.tar.gz" }
+PyMySQL = "^1.0.2"
 
 [tool.poetry.dev-dependencies]
 pylint = "^2.13.9"
