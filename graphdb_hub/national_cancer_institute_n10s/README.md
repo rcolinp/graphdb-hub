@@ -16,4 +16,4 @@ The RDF graph will be mapped to Neo4j's Label Property Graph using Neosemantics 
 
 __S/P import:__
 
-![MapNs_MapDef](https://raw.githubusercontent.com/rcolinp/graphdb-hub/main/graphdb_hub/national_cancer_institute_n10s/images/nodes_rels_props.png)
+![Import Data](https://raw.githubusercontent.com/rcolinp/graphdb-hub/main/graphdb_hub/national_cancer_institute_n10s/images/nodes_rels_props.png)
