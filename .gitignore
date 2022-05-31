@@ -131,3 +131,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 wip_*
+graphdb_hub/.DS_Store
+.DS_Store
