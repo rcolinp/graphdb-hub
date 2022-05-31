@@ -47,7 +47,3 @@ CALL n10s.rdf.import.fetch("file:///var/lib/neo4j/import/ncit.ttl", "Turtle")
 // relationship is represented as a single hop relationship.
 MATCH (v:ConceptReference)<-[:HAS_PARENT*2..]-(child)-[shortcut:HAS_PARENT]->(v) DELETE shortcut;
 // -> Deleted 40 relationships, completed after 84829 ms.
-
-
-
-
