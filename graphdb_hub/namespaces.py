@@ -3,6 +3,7 @@ from rdflib.namespace import RDF, RDFS, OWL, XSD, DC, DCTERMS, SKOS
 
 NCIT = Namespace("http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#")
 SH = Namespace("http://www.w3.org/ns/shacl#")
+UMLS_STY = Namespace('http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#STY')
 
 NAMESPACES = {
     "RDF": RDF,
@@ -14,4 +15,5 @@ NAMESPACES = {
     "SKOS": SKOS,
     "NCIT": NCIT,
     "SH": SH,
+    "UMLS_STY": UMLS_STY,
 }
