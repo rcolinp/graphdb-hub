@@ -39,6 +39,8 @@ call n10s.mapping.add('http://www.w3.org/2000/01/rdf-schema#seeAlso', 'reference
 // Import Turtle serialization
 CALL n10s.rdf.import.fetch("file:///var/lib/neo4j/import/ncit.ttl", "Turtle")
 
+// Import as SKOS Taxonomy
+CALL n10s.skos.import.fetch("file:///var/lib/neo4j/import/ncit.ttl", "Turtle")
 
 // It can be quite common when working with manually curated taxonomies to have multi-hop hierarchical relationships represented
 // as single-hop relationships. For example, HAS_PARENT within our Neo4j Graph or <http://www.w3.org/2004/02/skos/core#broader>)
