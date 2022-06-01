@@ -40,10 +40,10 @@ call n10s.mapping.add('http://www.w3.org/2000/01/rdf-schema#seeAlso', 'reference
 CALL n10s.rdf.import.fetch("file:///var/lib/neo4j/import/ncit.ttl", "Turtle")
 
 
-// It can be quite common when working with manually curated taxonomies to have multi-hop hierarchical relationships represented \
-// as single-hop relationships. For example, HAS_PARENT within our Neo4j Graph or <http://www.w3.org/2004/02/skos/core#broader>) \
+// It can be quite common when working with manually curated taxonomies to have multi-hop hierarchical relationships represented
+// as single-hop relationships. For example, HAS_PARENT within our Neo4j Graph or <http://www.w3.org/2004/02/skos/core#broader>)
 // represented as a single hop within in manually curated taxonomies.
-// To ensure that these relationships are represented as single-hop relationships, we can delete all relationships where a 2+ hop \
+// To ensure that these relationships are represented as single-hop relationships, we can delete all relationships where a 2+ hop
 // relationship is represented as a single hop relationship.
 MATCH (v:ConceptReference)<-[:HAS_PARENT*2..]-(child)-[shortcut:HAS_PARENT]->(v) DELETE shortcut;
 // -> Deleted 40 relationships, completed after 84829 ms.
