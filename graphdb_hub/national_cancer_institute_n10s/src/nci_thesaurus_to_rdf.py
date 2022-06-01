@@ -46,9 +46,9 @@ class NciTxtToRDF:
             self.graph.add((uri, SKOS.definition, Literal(tokens[4])))
             # self.graph.add((uri, SKOS.member, Literal(tokens[7].split("|")[0])))
             if tokens[2]:
-                for code in tokens[2].split("|"):
-                    code = code.strip()
-                    sc_uri = URIRef(compact_uri_to_uri(f"NCIT:{code}", NAMESPACES))
+                for ncit_code in tokens[2].split("|"):
+                    ncit_code = ncit_code.strip()
+                    sc_uri = URIRef(compact_uri_to_uri(f"NCIT:{ncit_code}", NAMESPACES))
                     self.graph.add((uri, SKOS.broader, sc_uri))
             see_also = f"https://ncit.nci.nih.gov/ncitbrowser/pages/concept_details.jsf?dictionary=NCI%20Thesaurus&code={tokens[0]}"
             self.graph.add((uri, RDFS.seeAlso, Literal(see_also)))
